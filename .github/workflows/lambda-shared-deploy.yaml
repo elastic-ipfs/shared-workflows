@@ -48,7 +48,7 @@ jobs:
           aws-region: ${{ secrets.aws_region }}
       - name: Deploy Lambda
         run: |
-          npm run deploy
+          aws lambda update-function-code --cli-connect-timeout 15000 --region $AWS_REGION --function-name $LAMBDA --image $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$AWS_ECR_REPOSITORY:$DOCKER_IMAGE_VERSION
         env:
           LAMBDA: ${{ inputs.lambda }}
           AWS_REGION: ${{ secrets.aws_region }}
