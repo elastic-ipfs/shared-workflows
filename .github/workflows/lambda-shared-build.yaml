@@ -50,7 +50,7 @@ jobs:
         node-version: 16.x
         # cache: 'npm' # Enable when this is fixed https://github.com/actions/setup-node/issues/516
     - name: Install dependencies
-      uses: npm ci
+      run: npm ci
     - name: Set environment variables
       run: | 
         echo IMAGE_REPOSITORY=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]') >> $GITHUB_ENV
