@@ -78,7 +78,7 @@ jobs:
       uses: aws-actions/amazon-ecr-login@v1
     - name: Build And Push Image with suffix label
       if: inputs.docker_image_version_suffix_label != ''
-      uses: docker/build-push-action@v3
+      uses: docker/build-push-action@v4
       with:
         push: ${{ inputs.docker_push }}
         context: .
@@ -93,7 +93,7 @@ jobs:
           org.opencontainers.image.source=https://github.com/${{ github.repository }}
     - name: Build And Push Image
       if: inputs.docker_image_version_suffix_label == ''
-      uses: docker/build-push-action@v3
+      uses: docker/build-push-action@v4
       with:
         push: ${{ inputs.docker_push }}
         context: .
