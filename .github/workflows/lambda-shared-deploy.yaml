@@ -55,3 +55,4 @@ jobs:
           AWS_ACCOUNT_ID: ${{ secrets.aws_account_id }}
           AWS_ECR_REPOSITORY: ${{ secrets.aws_ecr_repository }}
           DOCKER_IMAGE_VERSION: ${{ inputs.docker_image_version }}
+          BUILDX_NO_DEFAULT_ATTESTATIONS: 1
